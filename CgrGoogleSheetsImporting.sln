@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CgrGoogleSheetsImporting", "GoogleSheetsImporting\CgrGoogleSheetsImporting.csproj", "{9A3BB6E1-3D5C-40A9-B220-FD31007CF229}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CgrGoogleSheetsImporting", "CgrGoogleSheetsImporting\CgrGoogleSheetsImporting.csproj", "{9A3BB6E1-3D5C-40A9-B220-FD31007CF229}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
