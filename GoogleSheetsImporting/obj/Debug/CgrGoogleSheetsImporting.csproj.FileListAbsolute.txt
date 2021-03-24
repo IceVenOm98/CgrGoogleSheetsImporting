@@ -1,9 +1,9 @@
-C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\bin\Debug\GoogleSheetsImporting.dll
-C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\bin\Debug\GoogleSheetsImporting.pdb
 C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\obj\Debug\CgrGoogleSheetsImporting.csproj.CoreCompileInputs.cache
 C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\obj\Debug\CgrGoogleSheetsImporting.csproj.CopyComplete
-C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\obj\Debug\GoogleSheetsImporting.dll
-C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\obj\Debug\GoogleSheetsImporting.pdb
 C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\obj\Debug\CgrGoogleSheetsImporting.csprojAssemblyReference.cache
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\bin\Debug\CgrGoogleSheetsImporting.dll
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\bin\Debug\CgrGoogleSheetsImporting.pdb
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\obj\Debug\CgrGoogleSheetsImporting.dll
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\obj\Debug\CgrGoogleSheetsImporting.pdb

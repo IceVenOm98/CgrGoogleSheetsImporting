@@ -7,8 +7,8 @@
     <ProjectGuid>{9A3BB6E1-3D5C-40A9-B220-FD31007CF229}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GoogleSheetsImporting</RootNamespace>
-    <AssemblyName>GoogleSheetsImporting</AssemblyName>
+    <RootNamespace>CgrGoogleSheetsImporting</RootNamespace>
+    <AssemblyName>CgrGoogleSheetsImporting</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
