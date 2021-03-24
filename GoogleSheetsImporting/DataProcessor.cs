@@ -97,33 +97,12 @@ namespace CgrGoogleSheetsImporting
             }
             catch (FormatException e)
             {
-                //throw new FormatException(String.Format("Неверные данные в ячейке {0}", fieldName), e);
                 Console.WriteLine(String.Format("Неверные данные в ячейке {0}", fieldName));
             }
             finally
             {            
                 Entity.GetType().GetProperty(fieldName).SetValue(entity, typedValue);
             }
-            /*Type propertyType = Entity.GetType().GetProperty(fieldName).PropertyType;
-            if (propertyType.IsEquivalentTo(typeof(Int32)))
-            {
-                if (value == "")
-                {
-                    Entity.GetType().GetProperty(fieldName).SetValue(entity, 0);
-                }
-                else
-                {
-                    Entity.GetType().GetProperty(fieldName).SetValue(entity, int.Parse(value));
-                }
-            }
-            else if (propertyType.IsEquivalentTo(typeof(string)))
-            {
-                Entity.GetType().GetProperty(fieldName).SetValue(entity, value);
-            }
-            else if (propertyType.IsEquivalentTo(typeof(bool)))
-            {
-                Entity.GetType().GetProperty(fieldName).SetValue(entity, bool.Parse(value));
-            }*/
         }
 
         /// <summary>
