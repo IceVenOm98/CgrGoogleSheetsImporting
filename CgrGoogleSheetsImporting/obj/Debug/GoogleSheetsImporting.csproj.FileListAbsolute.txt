@@ -1,0 +1,9 @@
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\bin\Debug\GoogleSheetsImporting.dll
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\bin\Debug\GoogleSheetsImporting.pdb
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\obj\Debug\GoogleSheetsImporting.csproj.CoreCompileInputs.cache
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\obj\Debug\GoogleSheetsImporting.csproj.CopyComplete
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\obj\Debug\GoogleSheetsImporting.dll
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\obj\Debug\GoogleSheetsImporting.pdb
+C:\Users\Макс\source\repos\GoogleSheetsImporting\GoogleSheetsImporting\obj\Debug\GoogleSheetsImporting.csprojAssemblyReference.cache
