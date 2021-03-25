@@ -45,13 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiError.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="DataProcessor.cs" />
+    <Compile Include="Exceptions\NotValidTableLinkException.cs" />
+    <Compile Include="Exceptions\NotValidRequestException.cs" />
     <Compile Include="GoogleSheetsApiConnector.cs" />
     <Compile Include="IApiConnector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SheetData.cs" />
     <Compile Include="SpreadSheetsData.cs" />
-    <Compile Include="WrongDownloadingDataException.cs" />
+    <Compile Include="Exceptions\WrongDownloadingDataException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

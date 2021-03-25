@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using CgrGoogleSheetsImporting.Exceptions;
+using System.IO;
 
 namespace CgrGoogleSheetsImporting
 {
@@ -15,6 +17,9 @@ namespace CgrGoogleSheetsImporting
     {
         private readonly Uri ApiUrl;
         readonly string Key;
+        public bool Status { get; }
+        public string StatusMessage { get; }
+
 
         /// <summary>
         /// Конструктор коннектора
@@ -36,20 +41,9 @@ namespace CgrGoogleSheetsImporting
         ///
         public SpreadSheetsData GetSpreadSheetsData(string spreadsheetId)
         {
-            try
-            {
-                var webClient = new WebClient
-                {
-                    Encoding = System.Text.Encoding.UTF8
-                };
-                Uri requestUrl = new Uri(string.Format("{0}{1}?key={2}", ApiUrl.OriginalString, spreadsheetId, Key));
-                var response = webClient.DownloadString(requestUrl);
-                return JsonConvert.DeserializeObject<SpreadSheetsData>(response);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            Uri requestUrl = new Uri(string.Format("{0}{1}?key={2}", ApiUrl.OriginalString, spreadsheetId, Key));
+            TryDownloadString(requestUrl, out string response);
+            return JsonConvert.DeserializeObject<SpreadSheetsData>(response);
         }
 
         /// <summary>
@@ -68,7 +62,7 @@ namespace CgrGoogleSheetsImporting
                     Encoding = System.Text.Encoding.UTF8
                 };
                 Uri requestUrl = new Uri(string.Format("{0}{1}/values/{2}?key={3}", ApiUrl.OriginalString, spreadsheetId, sheetName, Key));
-                var response = webClient.DownloadString(requestUrl);
+                TryDownloadString(requestUrl,  out string response);
                 return JsonConvert.DeserializeObject<SheetData>(response);
             }
             catch (Exception)
@@ -86,26 +80,37 @@ namespace CgrGoogleSheetsImporting
         public SheetData GetSheetData(string spreadsheetId, string sheetName)
         {
             Uri requestUrl = new Uri(string.Format("{0}{1}/values/{2}?key={3}", ApiUrl.OriginalString, spreadsheetId, sheetName, Key));
+            TryDownloadString(requestUrl, out string response);
+            return JsonConvert.DeserializeObject<SheetData>(response);
+
+        }
+
+
+        private bool TryDownloadString(Uri requestUrl, out string response)
+        {
+            response = null;
             var webClient = new WebClient
             {
                 Encoding = System.Text.Encoding.UTF8
             };
             try
             {
-                var response = webClient.DownloadString(requestUrl);
-                return JsonConvert.DeserializeObject<SheetData>(response);
+                response = webClient.DownloadString(requestUrl);
+                return true;
             }
             catch (WebException e)
             {
-                throw new WrongDownloadingDataException(e);
-            }
-            catch (JsonSerializationException e)
-            {
-                throw new JsonSerializationException("Ошибка сериализации объектов из таблицы. Проверьте структуру объектов и название атрибутов полей", e);
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Ошибка получения информации", e);
+                var error = new StreamReader(e.Response.GetResponseStream()).ReadToEnd();
+                error = error.Substring(13, error.Length - 16);
+                ApiError apiError = JsonConvert.DeserializeObject<ApiError>(error);
+                if (e.Status == WebExceptionStatus.ProtocolError)
+                {
+                    throw new NotValidRequestException(e, apiError.Message);
+                }
+                else
+                {
+                    throw;
+                }
             }
         }
     }

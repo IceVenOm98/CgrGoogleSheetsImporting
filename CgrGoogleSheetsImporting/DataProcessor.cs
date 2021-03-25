@@ -22,10 +22,10 @@ namespace CgrGoogleSheetsImporting
         /// <param name="spreadsheetId">Id таблицы</param>
         /// <param name="sheetName">Название листа</param>
         /// <param name="apiConnector">Коннектор API</param>
-        public DataProcessor(T entity, string spreadsheetId, string sheetName, IApiConnector apiConnector)
+        public DataProcessor(T entity, string spreadsheetLink, string sheetName, IApiConnector apiConnector)
         {
+            SpreadsheetId = GetSpreadSheetIdFromLink(spreadsheetLink);
             Entity = entity;
-            SpreadsheetId = spreadsheetId;
             SheetName = sheetName;
             ApiConnector = apiConnector;
             CreateAttributesFieldsDictionary();
@@ -135,6 +135,20 @@ namespace CgrGoogleSheetsImporting
             }
             typedValue = Convert.ChangeType(value, conversionType);
             return true;
+        }
+
+        private string GetSpreadSheetIdFromLink(string link)
+        {
+            if (!link.StartsWith(Constants.GoogleSheetsUrl))
+            {
+                throw new NotValidRequestException(Constants.BadLink);
+            }
+            link = link.Substring(Constants.GoogleSheetsUrl.Length);
+            if(!link.Contains("/"))
+            {
+                throw new NotValidRequestException(Constants.BadLink);
+            }
+            return link.Remove(link.IndexOf("/"));
         }
     }
 }
